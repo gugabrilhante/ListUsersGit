@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gustavo.brilhante.listusers">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:name=".application.ListUsersApp"
+        android:icon="@mipmap/ic_citrum"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_citrum_rounded"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity_"
+            android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <fragment android:name=".fragment.UserListFragment_"
+            android:configChanges="orientation|screenSize"/>
+        <fragment android:name=".fragment.DetailFragment_"
+            android:configChanges="orientation|screenSize"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gustavo.brilhante.listusers.fragment.UserListFragment">
+
+    <LinearLayout
+        android:id="@+id/errorMessageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/erro_message_space"
+        android:visibility="gone"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/errorMessageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:text="@string/erro_message"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/listLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+        <com.github.rahatarmanahmed.cpv.CircularProgressView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/progressView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cpv_thickness="9px"
+            app:cpv_color="@color/colorPrimary"
+            app:cpv_animAutostart="true"
+            app:cpv_indeterminate="true" />
+
+        <TextView
+            android:id="@+id/loadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchBarLayout"
+            android:layout_centerHorizontal="true"
+            android:text="Baixando usuários"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
+    </LinearLayout>
+</RelativeLayout>
